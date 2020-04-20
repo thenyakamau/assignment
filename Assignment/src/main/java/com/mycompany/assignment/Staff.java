@@ -60,7 +60,8 @@ public class Staff {
         }
         
         double total = calculateTotal(vacation, this.extra_bonus);
-         System.out.print(total);
+         //System.out.print(total);
+         mainInterface.displaySalary(total);
     }
     
      private double calculateTotal(int salary, double extra_bonus) {

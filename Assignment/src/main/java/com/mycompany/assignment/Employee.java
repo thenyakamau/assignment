@@ -2,7 +2,7 @@ package com.mycompany.assignment;
 
 import java.util.Scanner;
 
-public class Employee implements MainInterface {
+public class Employee {
     
     int id;
     String fullName;
@@ -63,7 +63,20 @@ public class Employee implements MainInterface {
             staff.calculateSalary();
             
         }else if(seniority.equals("faculty")){
+             System.out.println("Input administrative degree ranges from 1-10 depending on authority 1 for basic, 10 for head: ");
+            Scanner in = new Scanner(System.in);
+            int degree = in.nextInt();
             
+            System.out.println("Input administrative postion ranges from 1-10 depending on authority 1 for basic, 10 for head: ");
+            
+            int position = in.nextInt();
+            
+            System.out.println("Input extra bonus calculated from their general salary in percentage: ");
+             
+            double bonus = in.nextDouble();
+            
+            Faculty staff = new Faculty(degree,position, bonus);
+            staff.calculateSalary();
         }else {
             System.out.println("senirioty can either be : staff or faculty");
         }
@@ -71,7 +84,16 @@ public class Employee implements MainInterface {
     
     public void vacations() {
           if(seniority.equals("staff")){
-            System.out.println(seniority);
+             System.out.println("Input administrative postion ranges from 1-10 depending on authority 1 for basic, 10 for head: ");
+            Scanner in = new Scanner(System.in);
+            int position = in.nextInt();
+            
+            System.out.println("Input extra bonus calculated from their general days off in percentage: ");
+             
+            double bonus = in.nextDouble();
+            
+            Staff staff = new Staff(position, bonus);
+            staff.calculateVacation();
         }else if(seniority.equals("faculty")){
             
         }else {
@@ -79,8 +101,5 @@ public class Employee implements MainInterface {
         }
     }
 
-    @Override
-    public void displaySalary(double total) {
-        System.out.println(total);
-    }
+  
 }

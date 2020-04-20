@@ -4,7 +4,7 @@ package com.mycompany.assignment;
 import java.util.Scanner;
 
 
-public class Main {
+public class Main implements MainInterface{
     
    
     public static void main(String[] args) {
@@ -21,6 +21,11 @@ public class Main {
         String items = in.next();
         Employee employee = new Employee(id, fullname, seniority);
         employee.getItem(items);
+    }
+
+    @Override
+    public void displaySalary(double total) {
+        System.out.println(total);
     }
     
 }
